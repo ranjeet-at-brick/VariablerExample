@@ -1,0 +1,57 @@
+{
+  "configurations": {
+    "default": {
+      "variables": {
+        "VERSION": "1.2.3"
+      }
+    },
+    "env": {
+      "local": {
+        "files": {
+          "appIcon": "icon/local.png"
+        },
+        "variables": {
+          "API_URL": "http://localhost:8080",
+          "BUNDLE_ID": "com.example.local",
+          "VERSION": "1.1.3"
+        }
+      },
+      "staging": {
+        "files": {
+          "appIcon": "icon/staging.png"
+        },
+        "variables": {
+          "API_URL": "https://staging.example.com",
+          "BUNDLE_ID": "com.example.staging",
+          "VERSION": "1.1.2"
+        }
+      },
+      "production": {
+        "files": {
+          "appIcon": "icon/production.png"
+        },
+        "variables": {
+          "API_URL": "https://production.example.com",
+          "BUNDLE_ID": "com.example.production",
+          "VERSION": "1.1.1"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "id": "appIcon",
+      "to": "assets/icon.png"
+    }
+  ],
+  "templates": [
+    {
+      "from": "api.js",
+      "to": "src/api.js"
+    },
+    {
+      "from": "build.gradle",
+      "to": "android/app/build.gradle"
+    }
+  ]
+}
